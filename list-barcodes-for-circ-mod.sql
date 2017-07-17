@@ -5,9 +5,11 @@ SELECT
 	ac.barcode AS "Barcode",
 	ac.circ_modifier AS "Circ Modifier",
 	ac.opac_visible AS "Item - OPAC Visible?",
+	ac.holdable AS "Item - Holdable?",
 	ac.alert_message AS "Alert Message",
-	acl.name AS "Shevling Location",
-	acl.opac_visible AS "Shelving Location - OPAC Visible?"
+	acl.name AS "Shelving Location",
+	acl.opac_visible AS "Shelving Location - OPAC Visible?",
+	acl.holdable AS "Shelving Location - Holdable?"
 -- *
 FROM asset.copy ac
 	JOIN asset.copy_location acl ON ac.location = acl.id
