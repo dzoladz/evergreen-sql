@@ -1,5 +1,5 @@
 -- list items (barcodes) missing circulcation modifiers by library (org_unit)
-SELECT ou.name AS "Library", 
+SELECT aou.name AS "Owning Library",
 	b.id as "TCN", 
 	cn.label as "Call Number", 
 	c.barcode AS "Barcode", 
@@ -8,9 +8,9 @@ SELECT ou.name AS "Library",
   FROM biblio.record_entry b
 	INNER JOIN asset.call_number cn ON cn.record=b.id
 	INNER JOIN asset.copy c ON c.call_number=cn.id
-	INNER JOIN actor.org_unit ou on ou.id=c.circ_lib
+	INNER JOIN actor.org_unit aou on aou.id=cn.owning_lib
   WHERE b.deleted=FALSE
 	AND c.deleted=FALSE
 	AND b.id != -1
 	AND c.circ_modifier IS NULL
-  ORDER BY ou.name, c.barcode;
+  ORDER BY aou.name, c.barcode;
