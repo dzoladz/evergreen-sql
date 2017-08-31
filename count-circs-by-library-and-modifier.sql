@@ -1,3 +1,6 @@
+-- EG version: 2.10
+-- Count Total Circs for DVDs, display title and subtitle
+
 select 
 -- *
 count(distinct(acirc.id)) AS "Total Circs",
@@ -6,7 +9,7 @@ ac.barcode AS "Barcode",
 to_char(max(acirc.checkin_time), 'MM-DD-YYYY') AS "Last Checkin Time",
 max(acirc.due_date) > now() AS "Checked Out?",
   ARRAY_TO_STRING(
-    XPATH('//marc:datafield[@tag="245"][1]//text()',
+    XPATH('//marc:datafield[@tag="245"][1]/marc:subfield[@code="a" or @code="b"]/text()',
       bre.marc::XML, ARRAY[ARRAY['marc', 'http://www.loc.gov/MARC21/slim']]
     ),
     ' '
