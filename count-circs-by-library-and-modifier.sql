@@ -22,7 +22,7 @@ FROM asset.copy ac
 INNER JOIN asset.call_number acn ON ac.call_number = acn.id
 INNER JOIN biblio.record_entry bre ON acn.record = bre.id
 INNER JOIN action.circulation acirc ON ac.id = acirc.target_copy
-where acn.owning_lib = '118'
+WHERE acn.owning_lib = '118'
 	AND ac.circ_modifier = 'Movie'
 	AND ac.deleted is false
 GROUP BY acirc.target_copy, acn.label, ac.barcode, bre.marc
