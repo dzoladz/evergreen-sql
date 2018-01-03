@@ -1,4 +1,4 @@
-﻿/* Consortium of Ohio Libraries
+/* Consortium of Ohio Libraries
  * Version: Evergreen 3.0
  *
  * Description:
