@@ -1,9 +1,11 @@
-/*
-Consortium of Ohio Libraries
-Identify TCNs for Quarterly Authority Process with Backstage Library Works
-
-Note: Execute query during the month following the end of each quarter
-*/
+/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ * 
+ * Description: 
+ * Identify TCNs for Quarterly Authority Process with Backstage Library Works
+ *
+ * Note: Execute query during the month following the end of each quarter
+ */
 
 ((
 SELECT DISTINCT 
