@@ -1,13 +1,17 @@
-/*
-Run this query BEFORE importing any quarterly returned records from BSLW
-These values are used for SuperCats training purposes 
-*/
+﻿/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ *
+ * Description:
+ * Run this query BEFORE importing any quarterly returned records from BSLW
+ * These values are used for SuperCats training purposes 
+ */
+
 
 ((
 SELECT DISTINCT 
 	bre1.tcn_value AS "TCN", 
 	ausr1.usrname AS "User", 
-	bre1.fingerprint AS "Appx. Title", 
+	bre1.fingerprint AS "Title/Author/Parts", 
 	to_char(bre1.edit_date, 'MM-DD-YYYY') AS "Last Edited Date"
   FROM biblio.record_entry bre1
   INNER JOIN metabib.real_full_rec mrfr1 ON bre1.id = mrfr1.record
@@ -20,7 +24,7 @@ SELECT DISTINCT
 SELECT DISTINCT 
 	bre2.tcn_value AS "TCN", 
 	ausr2.usrname AS "User", 
-	bre2.fingerprint AS "Appx. Title", 
+	bre2.fingerprint AS "Title/Author/Parts", 
 	to_char(bre2.edit_date, 'MM-DD-YYYY') AS "Last Edited Date"
   FROM biblio.record_entry bre2
   INNER JOIN metabib.real_full_rec mrfr2 ON bre2.id = mrfr2.record
