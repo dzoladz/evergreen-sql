@@ -1,4 +1,11 @@
--- list items (barcodes) missing circulcation modifiers by library (org_unit)
+/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ * 
+ * Description: 
+ * List items (barcodes) missing circulcation modifiers by library (org_unit)
+ *
+ */
+ 
 SELECT aou.name AS "Owning Library",
 	b.id as "TCN", 
 	cn.label as "Call Number", 

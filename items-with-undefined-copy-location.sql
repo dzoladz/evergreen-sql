@@ -1,5 +1,12 @@
--- items assigned to copy location COOL Stacks
--- This is an undefined copy location, no one should be using it
+/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ * 
+ * Description: 
+ * Identifies items assigned to copy location COOL Stacks
+ *
+ * Note: This is an undefined copy location in COOL, no one should be using it
+ */
+ 
 SELECT ou.name AS "Library", 
 	b.id AS "TCN", 
 	cn.label AS "Call Number", 
