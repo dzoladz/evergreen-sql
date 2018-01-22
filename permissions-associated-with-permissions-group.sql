@@ -15,6 +15,7 @@ SELECT
 FROM permission.perm_list ppl
   INNER JOIN permission.grp_perm_map pgpm ON pgpm.perm = ppl.id
   INNER JOIN permission.grp_tree pgt ON pgt.id = pgpm.grp
---WHERE pgt.name ~* 'local system' -- filter, case insensitive name is like
+--WHERE pgt.name ~* 'local system' -- filter, name of permission group, case insensitive name
+--WHERE ppl.code ~* 'view_billing' -- filter, name of permission, case insensitive
 ORDER BY pgt.name, ppl.code ASC
 ;
