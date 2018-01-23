@@ -1,7 +1,12 @@
--- EG version: 2.10
--- Lists Circulation Policies by Library
--- Searching by Org Unit ID is preferred
--- Note: some reportable fields are not being displayed here
+/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ *
+ * Description:
+ * Lists Circulation Policies by Library
+ * Searching by Org Unit ID is preferred
+ *
+ * Note: some reportable fields are not being displayed here
+ */
 SELECT 
 	ccmm.active AS "Active?",
 	ccmm.org_unit AS "Library",
