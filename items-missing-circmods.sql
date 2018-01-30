@@ -10,7 +10,8 @@ SELECT aou.name AS "Owning Library",
 	b.id as "TCN", 
 	cn.label as "Call Number", 
 	c.barcode AS "Barcode", 
-	xpath('//m:datafield[@tag="245"]/m:subfield[@code="a"]/text()', b.marc::xml, ARRAY[ARRAY['m','http://www.loc.gov/MARC21/slim']]) as "Title", 
+	ARRAY_TO_STRING(
+	XPATH('//m:datafield[@tag="245"]/m:subfield[@code="a"]/text()', b.marc::xml, ARRAY[ARRAY['m','http://www.loc.gov/MARC21/slim']]), ' ') as "Title", 
 	'Not Assigned' as "Circulation Modifier"
   FROM biblio.record_entry b
 	INNER JOIN asset.call_number cn ON cn.record=b.id
