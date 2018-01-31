@@ -36,7 +36,7 @@ SELECT DISTINCT
      OR (mrfr2.tag = '990' AND mrfr2.value ~ 'brief') 
      OR (mrfr2.tag = '049' AND mrfr2.value ~ 'ohia') 
      OR (mrfr2.tag = '049' AND mrfr2.value ~ 'srba') 
-     OR (mrfr2.tag = '901' AND mrfr2.subfield = 'b' AND mrfr2.value ~ 'autogen')
+     --OR (mrfr2.tag = '901' AND mrfr2.subfield = 'b' AND mrfr2.value ~ 'autogen')
      ) 
      AND bre2.deleted = 'f'
-)) ORDER BY 1 ASC
+)) ORDER BY 1 ASC;
