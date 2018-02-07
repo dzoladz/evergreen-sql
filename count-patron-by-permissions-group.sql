@@ -1,5 +1,10 @@
--- EG version: 2.10
--- Count User Records Assigned to a Permissions Group
+/* Consortium of Ohio Libraries
+ * Version: Evergreen 3.0
+ * 
+ * Description: 
+ * Count User Records Assigned to a Permissions Group by Home Library
+ */
+ 
 SELECT  
 	pgt.name AS "Permission Group",
 	count(au.profile) AS "# of Records"
