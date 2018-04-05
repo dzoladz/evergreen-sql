@@ -13,4 +13,4 @@ FROM actor.usr au
 	INNER JOIN permission.grp_tree pgt ON pgt.id = au.profile
 --WHERE au.home_ou = '118' -- Or, specify a library J.R. Clarke
 GROUP BY pgt.name, pgt.id
-ORDER pgt.id;
+ORDER BY pgt.id;
