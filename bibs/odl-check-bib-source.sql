@@ -20,6 +20,6 @@ WHERE (bre.source != '101' OR bre.source is null)
 	-- AND (bre.create_date BETWEEN '2017-01-01' AND '2017-03-01') -- Between a date range
 	AND mrfr.tag = '856'
 	AND mrfr.value like '%overdrive%'
-	AND deleted IS FALSE
+	AND bre.deleted IS FALSE
 ORDER BY bre.create_date DESC
 ;
