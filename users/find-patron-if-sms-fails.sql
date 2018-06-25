@@ -18,5 +18,5 @@ FROM actor.usr
 		SELECT usr
 		FROM actor.usr_setting
 		WHERE name ~* 'sms'
-			AND value ~* '6145709847');
+			AND value ~* '6145709847'); -- try with hyphenation, if fails
 	
