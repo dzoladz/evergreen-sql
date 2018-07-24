@@ -21,7 +21,7 @@ FROM action.hold_request ahold -- hold records
 	INNER JOIN actor.usr ausr ON ausr.id = ahold.usr -- patron records
 	INNER JOIN biblio.record_entry bre ON bre.tcn_value = ahold.target::text -- title from 245a
 	INNER JOIN actor.org_unit aorg ON aorg.id = ausr.home_ou -- org unit names
-WHERE ahold.request_time > (now() - INTERVAL '120 days')
+WHERE ahold.request_time < (now() - INTERVAL '120 days')
 	AND ahold.hold_type = 'T' -- title-level holds
 	AND ahold.capture_time IS NULL -- never captured
 	AND (ahold.expire_time > now() -- expires at future date
