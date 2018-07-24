@@ -14,4 +14,4 @@ WHERE id IN (
 	HAVING COUNT(*) > 1
 )
 AND deleted IS FALSE
-ORDER BY tcn_value ASC;
+ORDER BY tcn_value::integer ASC;
