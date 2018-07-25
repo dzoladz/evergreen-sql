@@ -9,7 +9,7 @@ ahold.hold_type AS "Hold Type",
 --ausr.home_ou AS "Home Library",
 aorg.name AS "Patron Home Library",
 ausr.usrname AS "Patron Barcode",
-substring(ausr.first_given_name from 1 for 1) AS "Patron First Initial",
+--substring(ausr.first_given_name from 1 for 1) AS "Patron First Initial",
 ausr.family_name AS "Patron Last Name",
 ARRAY_TO_STRING(
     XPATH('//marc:datafield[@tag="245"][1]/marc:subfield[@code="a" or @code="b"]/text()',
