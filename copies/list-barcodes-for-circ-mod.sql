@@ -21,8 +21,9 @@ FROM asset.copy ac
 	JOIN asset.copy_location acl ON ac.location = acl.id
 	JOIN actor.org_unit aou ON ac.circ_lib = aou.id
 	JOIN config.copy_status cstatus ON ac.status = cstatus.id 
-WHERE ac.circ_modifier ~* 'movie-r' -- SET CIRCULATION MODIFIER
-	AND aou.name ~* 'j.r.' -- SET LIBRARY
+WHERE ac.circ_modifier ~* 'new book' -- SET CIRCULATION MODIFIER
+	AND aou.name ~* 'galion' -- SET LIBRARY
+	AND cstatus.name NOT IN ('Lost', 'Discard/Weed','Mending') -- Status Filters
 	AND ac.deleted = 'f'
 ORDER BY ac.edit_date DESC -- sort most recently added items to top
 -- limit 10
