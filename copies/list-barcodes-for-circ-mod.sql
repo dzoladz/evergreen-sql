@@ -10,7 +10,7 @@ SELECT
 	aou.name AS "Library",
 	ac.barcode AS "Barcode",
 	ac.circ_modifier AS "Circ Modifier",
-	ac.status AS "Item Status",
+	cstatus.name AS "Status",
 	ac.opac_visible AS "Item - OPAC Visible?",
 	ac.holdable AS "Item - Holdable?",
 	ac.alert_message AS "Alert Message",
@@ -20,6 +20,7 @@ SELECT
 FROM asset.copy ac
 	JOIN asset.copy_location acl ON ac.location = acl.id
 	JOIN actor.org_unit aou ON ac.circ_lib = aou.id
+	JOIN config.copy_status cstatus ON ac.status = cstatus.id 
 WHERE ac.circ_modifier ~* 'movie-r' -- SET CIRCULATION MODIFIER
 	AND aou.name ~* 'j.r.' -- SET LIBRARY
 	AND ac.deleted = 'f'
