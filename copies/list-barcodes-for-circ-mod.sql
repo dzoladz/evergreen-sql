@@ -10,6 +10,7 @@ SELECT
 	aou.name AS "Library",
 	ac.barcode AS "Barcode",
 	ac.circ_modifier AS "Circ Modifier",
+	ac.status AS "Item Status",
 	ac.opac_visible AS "Item - OPAC Visible?",
 	ac.holdable AS "Item - Holdable?",
 	ac.alert_message AS "Alert Message",
